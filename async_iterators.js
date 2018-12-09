@@ -1,7 +1,7 @@
-const sleepOne = ms => new Promise(r => setTimeout(() => { console.log('1'); r(); }, ms));
-const sleepTwo = ms => new Promise(r => setTimeout(() => { console.log('2'); r(); }, ms));
+const sleepOne = ms => new Promise(r => setTimeout(() => r(1), ms));
+const sleepTwo = ms => new Promise(r => setTimeout(() => r(2), ms));
 const promises = [
-  sleepOne(1000),
+  sleepOne(10000),
   sleepTwo(100),
 ];
 
